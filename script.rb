@@ -25,11 +25,7 @@ def prom_alum(hash)
   hash.each do |key,value|
     sum = 0
     value.each do |nota|
-      if nota == 'A'
-        sum +=0
-      else
-        sum +=nota.to_i
-      end
+        sum += nota.to_i
     end
     puts "#{key}: promedio = #{sum.to_f/value.size}"
   end
