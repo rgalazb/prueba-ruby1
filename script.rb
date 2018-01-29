@@ -78,7 +78,7 @@ while opc !=4
     ver_aprobados(hash_alum, nota)
   when 4
   else
-    puts 'elija una opción valida'
+    puts 'elija una opción válida'
   end
   opc = menu
 end
