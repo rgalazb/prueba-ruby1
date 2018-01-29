@@ -71,7 +71,12 @@ while opc !=4
   when 3
     puts 'ingresa nota minima para aprobar(5 por defecto)'
     nota = gets.chomp.to_i
-    ver_aprobados(hash_alum, nota)
+    if nota == 0
+      ver_aprobados(hash_alum)
+    else
+      ver_aprobados(hash_alum, nota)
+    end
+
   when 4
   else
     puts 'elija una opción válida'
