@@ -57,7 +57,8 @@ def ver_aprobados(hash, nota_min = 5)
         sum +=nota.to_i
       end
     end
-    if sum.to_f/value.size >= 5
+
+    if sum.to_f/value.size >= nota_min
       puts "#{key}: Aprueba"
     else
       puts "#{key}: Reprueba"
@@ -75,10 +76,11 @@ while opc !=4
   when 3
     puts 'ingresa nota minima para aprobar(5 por defecto)'
     nota = gets.chomp.to_i
-    ver_aprobados(hash_alum,nota)
+    ver_aprobados(hash_alum, nota)
   when 4
   else
     puts 'elija una opción valida'
   end
+  opc = menu
 end
 puts 'hasta luego...'
