@@ -6,7 +6,7 @@ def read_alum(file_name)
 end
 
 hash_alum = Hash.new
-alum = read_alum("notas.csv")
+alum = read_alum("alumnos.csv")
 alum.each do |alumno|
   key = alumno.shift
   hash_alum[key] = alumno
@@ -76,7 +76,6 @@ while opc !=4
     else
       ver_aprobados(hash_alum, nota)
     end
-
   when 4
   else
     puts 'elija una opción válida'
