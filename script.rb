@@ -47,10 +47,9 @@ def inasistencias_totales(hash)
   end
 end
 
-def veraprobados(hash, nota_min = 5)
+def ver_aprobados(hash, nota_min = 5)
   hash.each do |key,value|
     sum = 0
-    aprueba = false
     value.each do |nota|
       if nota == 'A'
         sum +=0
@@ -58,10 +57,28 @@ def veraprobados(hash, nota_min = 5)
         sum +=nota.to_i
       end
     end
-    if aprueba >= nota_min
+    if sum.to_f/value.size >= 5
       puts "#{key}: Aprueba"
     else
       puts "#{key}: Reprueba"
     end
   end
 end
+
+opc = menu
+while opc !=4
+  case opc
+  when 1
+    prom_alum(hash_alum)
+  when 2
+    inasistencias_totales(hash_alum)
+  when 3
+    puts 'ingresa nota minima para aprobar(5 por defecto)'
+    nota = gets.chomp.to_i
+    ver_aprobados(hash_alum,nota)
+  when 4
+  else
+    puts 'elija una opción valida'
+  end
+end
+puts 'hasta luego...'
