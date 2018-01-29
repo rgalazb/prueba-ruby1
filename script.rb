@@ -57,7 +57,6 @@ def ver_aprobados(hash, nota_min = 5)
         sum +=nota.to_i
       end
     end
-
     if sum.to_f/value.size >= nota_min
       puts "#{key}: Aprueba"
     else
